@@ -9,17 +9,18 @@ def home(request):
 def application(request):
     if request.method == 'POST':
         Student.objects.create(
-            name = request.POST["name"],
-            email = request.POST["ingredients"],
-            department =request.POST["process"],
+            name=request.POST["name"],
+            email = request.POST["email"],
+            DEPARTMENT_NAME = request.POST["DEPARTMENT_NAME"],
             mobile = request.POST["mobile"],
         )
       #  return HttpResponseRedirect(reverse("menu:home"))
         return HttpResponseRedirect(reverse("studentapp:apply"))
     return render(request,"studentapp/apply.html")
 
-def details(request):
-    
+# def details(request):
+
+
 
 
 
